@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/foundation.css">
+    <link rel="stylesheet" type="text/css" href="css/spinner.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+    <div class="row large-10 large-centered text-center small-12 columns">
+        <h1 class="text-center">Venues via Foursquare</h1>
+
+        <p class="input-p panel">
+            <span>Look for venues in</span>
+            <input id="near" placeholder="Amsterdam" required>
+            <span>with names matching</span>
+            <input id="query" placeholder="cafe">
+            <button id="submit" class="button tiny">Go!</button>
+        </p>
+    </div>
+
+    <div class="row canvas">
+        <div id="map-canvas"></div>
+        <div id="spinner" class="spinner hide"></div>
+    </div>
+
+    <div id="info-div" class="row panel hide">
+        <p id="info-msg">Click the markers for more info.</p>
+    </div>
+
+    <script id="infowindow-template" type="text/x-handlebars-template">
+    <div>
+        <h3>{{ name }}</h3>
+        <p>URL: <a href="{{ url }}">{{ url }}</a></p>
+        <p>Phone: {{ contact.formattedPhone }}</p>
+        <p>Address: {{ location.address }}, {{ location.city }}, {{ location.cc }}</p>
+    </div>
+    </script>
+
+    <script src="js/jquery-2.1.0.min.js"></script>
+    <script src="js/handlebars-v1.3.0.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=places"></script>
+    <script src="js/venues.js"></script>
+</body>
+</html>

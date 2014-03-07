@@ -41,7 +41,8 @@ function processInput() {
                 var marker = new google.maps.Marker({
                     position: new google.maps.LatLng(v.location.lat, v.location.lng),
                     title: v.name,
-                    map: map
+                    map: map,
+                    icon: 'icon.png'
                 });
                 latSum += v.location.lat;
                 lngSum += v.location.lng;

@@ -2,7 +2,7 @@ var map = null;
 var geocoder = null;
 var markers = [];
 
-var API_URL = "http://elasticboard.mihneadb.net:6000/search_fs";
+var API_URL = "http://elasticboard.mihneadb.net:5001/search_fs";
 
 var infoWindowTemplate = Handlebars.compile($("#infowindow-template").html());
 
